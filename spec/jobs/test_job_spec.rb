@@ -36,7 +36,7 @@ describe TestJob, type: :job do
 
   context "when raises an error" do
     let(:params) { { raise: true } }
-    it { expect { subject }.to raise_error }
+    it { expect { subject }.to raise_error(ZeroDivisionError) }
     it { expect { subject rescue nil } .to change { ActiveJobReporter::Job.count } .by(1) }
     it { expect { subject rescue nil } .to change { ActiveJobReporter::JobMessage.count } .by(1) }
 
