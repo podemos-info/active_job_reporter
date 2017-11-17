@@ -12,6 +12,28 @@ Monitoring and reporting for ActiveJob.
 * Automatic basic exception handling during errors.
 * Allows to override built-in Job model.
 
+## Installation
+1. Add this line to your application's Gemfile:
+
+```ruby
+gem 'active_job_reporter'
+```
+
+2. Update bundle
+
+```bash
+$ bundle
+```
+
+3. Run installer 
+
+Add `jobs`, `job_objects` and `job_messages` tables to your database and an initializer file for configuration:
+
+```bash
+$ bundle exec rails generate active_job_reporter:install
+$ bundle exec rake db:migrate
+```
+
 ## Usage
 
 1. Add `ReportableJob` concern to your jobs. You can add to `ApplicationJob` to avoid adding to every job. Jobs will be tracked automatically.
@@ -87,28 +109,6 @@ ActiveJobReporter.configure do |config|
 
   ...
 end
-```
-
-## Installation
-1. Add this line to your application's Gemfile:
-
-```ruby
-gem 'active_job_reporter'
-```
-
-2. Update bundle
-
-```bash
-$ bundle
-```
-
-3. Run installer 
-
-Add `jobs`, `job_objects` and `job_messages` tables to your database and an initializer file for configuration:
-
-```bash
-$ bundle exec rails generate active_job_reporter:install
-$ bundle exec rake db:migrate
 ```
 
 ## Changelog
