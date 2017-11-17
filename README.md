@@ -54,7 +54,10 @@ end
 
 ```ruby
 def related_objects
-  [ arguments.first&.fetch(:order, nil), *arguments.first&.fetch(:items, []) ].compact
+  [
+    arguments.first&.fetch(:order, nil), 
+    *arguments.first&.fetch(:items, [])
+  ].compact
 end
 ```
 
