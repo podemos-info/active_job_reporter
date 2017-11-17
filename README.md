@@ -116,6 +116,10 @@ end
 
 ## Changelog
 
+#### 0.1.1
+
+* Fixed deprecated use of class instead of class name in `belongs_to`.
+
 #### 0.1.0
 
 * First version.

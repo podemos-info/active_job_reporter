@@ -17,7 +17,7 @@ module ActiveJobReporter
 
       has_many :messages, foreign_key: "job_id", class_name: "ActiveJobReporter::JobMessage"
 
-      belongs_to :user, class_name: ActiveJobReporter.configuration.user_class, optional: true
+      belongs_to :user, class_name: ActiveJobReporter.configuration.user_class_name, optional: true
     end
 
     def add_message(type:, message:)
