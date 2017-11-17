@@ -105,7 +105,7 @@ ActiveJobReporter.configure do |config|
   ...
 
   # The class name for jobs
-  config.jobs_class_name = "Job"
+  config.job_class_name = "Job"
 
   ...
 end
