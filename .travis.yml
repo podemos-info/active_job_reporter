@@ -5,7 +5,7 @@ rvm:
 env:
 - CI=true
 before_script:
- - cd spec/test_app && bundle exec rake db:setup
+ - cd spec/test_app && bundle exec rake db:setup && cd ../..
 script:
  - bundle exec rubocop -c .rubocop.yml
  - bundle exec rspec
