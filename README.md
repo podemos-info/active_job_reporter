@@ -118,6 +118,7 @@ end
 
 #### 0.1.2
 
+* Fixes to `JobConcern`.
 * Tests fixes.
 
 #### 0.1.1
