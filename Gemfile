@@ -1,4 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
+
+source "https://rubygems.org"
 
 # Declare your gem's dependencies in activejob_reporter.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -11,4 +13,4 @@ gemspec
 # your gem to rubygems.org.
 
 # To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem "byebug", group: [:development, :test]

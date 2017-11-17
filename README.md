@@ -1,4 +1,4 @@
-# ActivejobReporter
+# Active Job Reporter
 Short description and motivation.
 
 ## Usage
