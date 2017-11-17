@@ -4,6 +4,8 @@ rvm:
 - 2.4.1
 env:
 - CI=true
+before_script:
+ - cd spec/test_app && bundle exec rake db:setup
 script:
  - bundle exec rubocop -c .rubocop.yml
  - bundle exec rspec
