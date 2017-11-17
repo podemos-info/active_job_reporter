@@ -20,8 +20,8 @@ describe TestJob, type: :job do
     end
   end
 
-  context "when result is an error" do
-    let(:params) { { error: true } }
+  context "when result is not ok" do
+    let(:params) { { issues: true } }
     it { expect { subject } .to change { ActiveJobReporter::Job.count } .by(1) }
     it { expect { subject } .to change { ActiveJobReporter::JobMessage.count } .by(2) }
 
@@ -30,11 +30,11 @@ describe TestJob, type: :job do
       before { job }
 
       it { is_expected.to be_finished }
-      it { expect(subject.result).to eq("error") }
+      it { expect(subject.result).to eq("issues") }
     end
   end
 
-  context "when raises an error " do
+  context "when raises an error" do
     let(:params) { { raise: true } }
     it { expect { subject }.to raise_error }
     it { expect { subject rescue nil } .to change { ActiveJobReporter::Job.count } .by(1) }
@@ -93,6 +93,7 @@ describe TestJob, type: :job do
       it { is_expected.to be_finished }
       it { expect(subject.result).to eq("ok") }
       it { expect(subject.job_objects.map(&:object)).to contain_exactly(resource1, resource2) }
+      it { expect(resource1.jobs).to eq([job_record]) }
     end
   end
 end

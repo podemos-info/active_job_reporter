@@ -8,9 +8,9 @@ class TestJob < ApplicationJob
   end
 
   def perform(**params)
-    if params[:error]
-      log :error, raw: "raw test message"
-      self.result = :error
+    if params[:issues]
+      log :issues, raw: "raw test message"
+      self.result = :issues
     end
 
     if params[:raise]

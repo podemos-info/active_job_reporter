@@ -3,6 +3,9 @@
 ActiveJobReporter.configure do |config|
   config.jobs_table_name = "<%= jobs_table_name %>"
 
-  # The class for users that will launch jobs
+  # The class name for jobs
+  # config.jobs_class_name = "ActiveJobReporter::Job"
+
+  # The class name for users that will launch jobs
   # config.user_class_name = "User"
 end

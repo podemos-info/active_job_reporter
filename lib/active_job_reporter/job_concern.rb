@@ -14,7 +14,6 @@ module ActiveJobReporter
       validates :job_id, :job_type, presence: true
 
       has_many :job_objects
-      has_many :objects, through: :job_objects
 
       has_many :messages, foreign_key: "job_id", class_name: "ActiveJobReporter::JobMessage"
 
